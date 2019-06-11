@@ -35,7 +35,7 @@ function callback(res) {
     decompress(buf, 'bin', {
       plugins: process.platform === 'linux' ? [tarxz()] : [unzip()],
       strip: process.platform === 'linux' ? 1 : 2,
-      filter: x => x.path.match(/ffmpeg(\.exe)?$|ffprobe(\.exe)?$/),
+      filter: x => x.path.match(/ffmpeg(\.exe)?$/),
     });
   });
 }
